@@ -17,7 +17,7 @@ defmodule LiveViewWorkshopWeb.Router do
   scope "/", LiveViewWorkshopWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    live "/", HomeLive, :index
   end
 
   # Other scopes may use custom stacks.
