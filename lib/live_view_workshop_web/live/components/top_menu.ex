@@ -5,13 +5,15 @@ defmodule LiveViewWorkshopWeb.Components.TopMenu do
   alias LiveViewWorkshopWeb.WhatIsPhoenixLiveviewIsNotForLive
   alias LiveViewWorkshopWeb.WhatIsPhoenixLiveviewIsForLive
   alias LiveViewWorkshopWeb.TheSimplestLiveviewLive
+  alias LiveViewWorkshopWeb.AboutHeexLive
 
   @slides [
     {WorkshopGoalsLive, &Routes.workshop_goals_path/2},
     {LiveviewOverviewLive, &Routes.liveview_overview_path/2},
     {WhatIsPhoenixLiveviewIsNotForLive, &Routes.what_is_phoenix_liveview_is_not_for_path/2},
     {WhatIsPhoenixLiveviewIsForLive, &Routes.what_is_phoenix_liveview_is_for_path/2},
-    {TheSimplestLiveviewLive, &Routes.the_simplest_liveview_path/2}
+    {TheSimplestLiveviewLive, &Routes.the_simplest_liveview_path/2},
+    {AboutHeexLive, &Routes.about_heex_path/2}
   ]
 
   @slides_count Enum.count(@slides)
