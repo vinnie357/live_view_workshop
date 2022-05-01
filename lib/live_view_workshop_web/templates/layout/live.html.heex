@@ -1,3 +1,15 @@
+<header>
+  <nav id="top-menu">
+    <ul>
+      <li><%= link "Home", to: Routes.home_path(@socket, :index) %></li>
+    </ul>
+    <%= if assigns[:slide] do %>
+      <div class="top-menu-actions">
+        <TopMenu.slider_actions slide={@slide} socket={@socket} />
+      </div>
+    <% end %>
+  </nav>
+</header>
 <main class="container">
   <p class="alert alert-info" role="alert"
     phx-click="lv:clear-flash"

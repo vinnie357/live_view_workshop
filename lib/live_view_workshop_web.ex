@@ -99,6 +99,7 @@ defmodule LiveViewWorkshopWeb do
       import LiveViewWorkshopWeb.ErrorHelpers
       import LiveViewWorkshopWeb.Gettext
       alias LiveViewWorkshopWeb.Router.Helpers, as: Routes
+      alias LiveViewWorkshopWeb.Components.TopMenu
 
       defp ok(socket), do: {:ok, socket}
       defp noreply(socket), do: {:noreply, socket}
