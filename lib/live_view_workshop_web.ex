@@ -44,8 +44,8 @@ defmodule LiveViewWorkshopWeb do
 
   def live_view do
     quote do
-      use Phoenix.LiveView,
-        layout: {LiveViewWorkshopWeb.LayoutView, "live.html"}
+      use Phoenix.LiveView, layout: {LiveViewWorkshopWeb.LayoutView, "live.html"}
+      import LiveViewWorkshopWeb.Components.Code
 
       unquote(view_helpers())
     end

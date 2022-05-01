@@ -19,15 +19,17 @@ import "../css/app.css"
 //     import "some-package"
 //
 
-// Include phoenix_html to handle method=PUT/DELETE in forms and buttons.
 import "phoenix_html"
-// Establish Phoenix Socket and LiveView configuration.
+import "../vendor/prism"
 import {Socket} from "phoenix"
 import {LiveSocket} from "phoenix_live_view"
 import topbar from "../vendor/topbar"
+import Code from "./Code";
 
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
-let liveSocket = new LiveSocket("/live", Socket, {params: {_csrf_token: csrfToken}})
+const params = {_csrf_token: csrfToken};
+const hooks = {Code};
+let liveSocket = new LiveSocket("/live", Socket, {params, hooks})
 
 // Show progress bar on live navigation and form submits
 topbar.config({barColors: {0: "#29d"}, shadowColor: "rgba(0, 0, 0, .3)"})
