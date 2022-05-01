@@ -22,6 +22,7 @@ defmodule LiveViewWorkshopWeb.Router do
     live "/liveview_overview", LiveviewOverviewLive, :index
     live "/what_is_phoenix_liveview_is_not_for", WhatIsPhoenixLiveviewIsNotForLive, :index
     live "/what_is_phoenix_liveview_is_for", WhatIsPhoenixLiveviewIsForLive, :index
+    live "/the_simplest_liveview", TheSimplestLiveviewLive, :index
   end
 
   # Other scopes may use custom stacks.
