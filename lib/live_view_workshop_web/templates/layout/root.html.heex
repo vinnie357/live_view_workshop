@@ -14,6 +14,9 @@
       <nav>
         <ul id="top-menu">
           <li><%= link "Home", to: Routes.home_path(@conn, :index) %></li>
+          <li><%= link "WorkshopGoalsLive", to: Routes.workshop_goals_path(@conn, :index) %></li>
+          <li><%= link "LiveviewOverviewLive", to: Routes.liveview_overview_path(@conn, :index) %></li>
+          <li><%= assigns[:slide] %></li>
         </ul>
       </nav>
     </header>
