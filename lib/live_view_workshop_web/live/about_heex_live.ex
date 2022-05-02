@@ -27,7 +27,7 @@ defmodule LiveViewWorkshopWeb.AboutHeexLive do
 
   @impl Phoenix.LiveView
   def render(assigns) do
-    assigns = assigns |> Map.put(:heex_example, @heex_example)
+    assigns = Map.put(assigns, :heex_example, @heex_example)
 
     ~H"""
     <h1>HEEx</h1>
@@ -35,6 +35,11 @@ defmodule LiveViewWorkshopWeb.AboutHeexLive do
     <h3>EEx => LEEx => HEEx</h3>
 
     <p>Syntax Madness 😱</p>
+
+    <ul>
+      <li><code>.html.heex</code> files</li>
+      <li><code>~H""</code> sigil</li>
+    </ul>
 
     <.code type="erb"><%= @heex_example %></.code>
     """
