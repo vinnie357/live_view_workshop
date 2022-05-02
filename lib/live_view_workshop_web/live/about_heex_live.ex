@@ -26,11 +26,6 @@ defmodule LiveViewWorkshopWeb.AboutHeexLive do
   """
 
   @impl Phoenix.LiveView
-  def mount(_params, _session, socket) do
-    socket |> assign(:slide, __MODULE__) |> ok()
-  end
-
-  @impl Phoenix.LiveView
   def render(assigns) do
     assigns = assigns |> Map.put(:heex_example, @heex_example)
 

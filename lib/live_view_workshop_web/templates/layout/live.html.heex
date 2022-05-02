@@ -3,11 +3,9 @@
     <ul>
       <li><%= link "Home", to: Routes.home_path(@socket, :index) %></li>
     </ul>
-    <%= if assigns[:slide] do %>
-      <div class="top-menu-actions">
-        <TopMenu.slider_actions slide={@slide} socket={@socket} />
-      </div>
-    <% end %>
+    <div class="top-menu-actions">
+      <TopMenu.slider_actions socket={@socket} />
+    </div>
   </nav>
 </header>
 <main class="container">

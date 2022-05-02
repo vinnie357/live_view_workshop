@@ -21,13 +21,15 @@ defmodule LiveViewWorkshopWeb.Components.TopMenu do
   def slider_actions(assigns) do
     assigns =
       assigns
-      |> Map.put(:current_index, current_index(assigns.slide))
+      |> Map.put(:current_index, current_index(assigns.socket.view))
       |> Map.put(:slides_count, @slides_count)
 
     ~H"""
-    <.nav_button text="<" path_func={path_func(@current_index - 1)} socket={@socket} />
-    <%= @current_index + 1 %> / <%= @slides_count %>
-    <.nav_button text=">" path_func={path_func(@current_index + 1)} socket={@socket} />
+    <%= if @current_index do %>
+      <.nav_button text="<" path_func={path_func(@current_index - 1)} socket={@socket} />
+      <%= @current_index + 1 %> / <%= @slides_count %>
+      <.nav_button text=">" path_func={path_func(@current_index + 1)} socket={@socket} />
+    <% end %>
     """
   end
 
@@ -41,9 +43,9 @@ defmodule LiveViewWorkshopWeb.Components.TopMenu do
     """
   end
 
-  defp current_index(slide) do
+  defp current_index(view) do
     Enum.find_index(@slides, fn {module, _func_path} ->
-      module == slide
+      module == view
     end)
   end
 
