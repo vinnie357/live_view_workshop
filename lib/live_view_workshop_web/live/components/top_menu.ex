@@ -6,6 +6,8 @@ defmodule LiveViewWorkshopWeb.Components.TopMenu do
   alias LiveViewWorkshopWeb.WhatIsPhoenixLiveviewIsForLive
   alias LiveViewWorkshopWeb.TheSimplestLiveviewLive
   alias LiveViewWorkshopWeb.AboutHeexLive
+  alias LiveViewWorkshopWeb.Exercise1Live
+  alias LiveViewWorkshopWeb.Exercise1PossibleSolutionLive
 
   @slides [
     {WorkshopGoalsLive, &Routes.workshop_goals_path/2},
@@ -13,7 +15,9 @@ defmodule LiveViewWorkshopWeb.Components.TopMenu do
     {WhatIsPhoenixLiveviewIsNotForLive, &Routes.what_is_phoenix_liveview_is_not_for_path/2},
     {WhatIsPhoenixLiveviewIsForLive, &Routes.what_is_phoenix_liveview_is_for_path/2},
     {TheSimplestLiveviewLive, &Routes.the_simplest_liveview_path/2},
-    {AboutHeexLive, &Routes.about_heex_path/2}
+    {AboutHeexLive, &Routes.about_heex_path/2},
+    {Exercise1Live, &Routes.exercise1_path/2},
+    {Exercise1PossibleSolutionLive, &Routes.exercise1_possible_solution_path/2}
   ]
 
   @slides_count Enum.count(@slides)
@@ -36,7 +40,7 @@ defmodule LiveViewWorkshopWeb.Components.TopMenu do
   defp nav_button(assigns) do
     ~H"""
     <%= if @path_func do %>
-      <%= link @text, to: @path_func.(@socket, :index), class: "button outline" %>
+      <%= live_redirect @text, to: @path_func.(@socket, :index), class: "button outline" %>
     <% else %>
       <button class="button outline" disabled><%= @text %></button>
     <% end %>
