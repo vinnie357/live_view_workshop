@@ -26,6 +26,8 @@ defmodule LiveViewWorkshopWeb.Router do
     live "/about_heex", AboutHeexLive, :index
     live "/exercise_1", Exercise1Live, :index
     live "/exercise_1_possible_solution", Exercise1PossibleSolutionLive, :index
+    live "/exercise_2", Exercise2Live, :index
+    live "/exercise_2_possible_solution", Exercise2PossibleSolutionLive, :index
   end
 
   # Other scopes may use custom stacks.

@@ -8,6 +8,8 @@ defmodule LiveViewWorkshopWeb.Components.TopMenu do
   alias LiveViewWorkshopWeb.AboutHeexLive
   alias LiveViewWorkshopWeb.Exercise1Live
   alias LiveViewWorkshopWeb.Exercise1PossibleSolutionLive
+  alias LiveViewWorkshopWeb.Exercise2Live
+  alias LiveViewWorkshopWeb.Exercise2PossibleSolutionLive
 
   @slides [
     {WorkshopGoalsLive, &Routes.workshop_goals_path/2},
@@ -17,7 +19,9 @@ defmodule LiveViewWorkshopWeb.Components.TopMenu do
     {TheSimplestLiveviewLive, &Routes.the_simplest_liveview_path/2},
     {AboutHeexLive, &Routes.about_heex_path/2},
     {Exercise1Live, &Routes.exercise1_path/2},
-    {Exercise1PossibleSolutionLive, &Routes.exercise1_possible_solution_path/2}
+    {Exercise1PossibleSolutionLive, &Routes.exercise1_possible_solution_path/2},
+    {Exercise2Live, &Routes.exercise2_path/2},
+    {Exercise2PossibleSolutionLive, &Routes.exercise2_possible_solution_path/2}
   ]
 
   @slides_count Enum.count(@slides)
