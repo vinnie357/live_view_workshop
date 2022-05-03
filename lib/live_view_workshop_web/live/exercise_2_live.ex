@@ -1,4 +1,4 @@
-defmodule LiveViewWorkshopWeb.Components.TabGroup do
+defmodule LiveViewWorkshopWeb.Components.TabGroup2 do
   use LiveViewWorkshopWeb, :component
 
   def tab_group(assigns) do
@@ -9,12 +9,15 @@ end
 
 defmodule LiveViewWorkshopWeb.Exercise2Live do
   use LiveViewWorkshopWeb, :live_view
-  import LiveViewWorkshopWeb.Components.TabGroup
+  import LiveViewWorkshopWeb.Components.TabGroup2
+
+  @path __ENV__.file |> String.replace_prefix(File.cwd!(), "") |> String.trim("/")
 
   @impl Phoenix.LiveView
   def mount(_params, _session, socket) do
     socket
     |> assign(:active_tab, "tab_1")
+    |> assign(:path, @path)
     |> ok()
   end
 
@@ -22,6 +25,7 @@ defmodule LiveViewWorkshopWeb.Exercise2Live do
   def render(assigns) do
     ~H"""
     <h1>Exercise 2: Extract tabs to a Component</h1>
+    <h3><%= @path %></h3>
 
     <.tab_group />
 

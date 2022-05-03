@@ -4,12 +4,18 @@ defmodule LiveViewWorkshopWeb.Exercise1Live do
   @path __ENV__.file |> String.replace_prefix(File.cwd!(), "") |> String.trim("/")
 
   @impl Phoenix.LiveView
-  def render(assigns) do
-    assigns = Map.put(assigns, :path, @path)
+  def mount(_params, _session, socket) do
+    socket
+    |> assign(:path, @path)
+    |> ok()
+  end
 
+  @impl Phoenix.LiveView
+  def render(assigns) do
     ~H"""
     <h1>Exercise 1: Let's implement Tabs!</h1>
     <h3><%= @path %></h3>
+
     <p>We already have styling setup, so keep using the same css classes.</p>
     <p>Now we need to hook up some click events to activate another tab and show their content properly.</p>
 
