@@ -24,6 +24,7 @@ defmodule LiveViewWorkshopWeb.Router do
     live "/what_is_phoenix_liveview_is_for", WhatIsPhoenixLiveviewIsForLive, :index
     live "/the_simplest_liveview", TheSimplestLiveviewLive, :index
     live "/about_heex", AboutHeexLive, :index
+    live "/liveview_callbacks", LiveviewCallbacksLive, :index
     live "/exercise_1", Exercise1Live, :index
     live "/exercise_1_possible_solution", Exercise1PossibleSolutionLive, :index
     live "/exercise_2", Exercise2Live, :index

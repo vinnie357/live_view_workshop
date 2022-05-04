@@ -8,6 +8,7 @@ defmodule LiveViewWorkshop.Application do
   @impl true
   def start(_type, _args) do
     children = [
+      LiveViewWorkshop.Tracker,
       # Start the Telemetry supervisor
       LiveViewWorkshopWeb.Telemetry,
       # Start the PubSub system

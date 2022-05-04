@@ -6,6 +6,7 @@ defmodule LiveViewWorkshopWeb.Components.TopMenu do
   alias LiveViewWorkshopWeb.WhatIsPhoenixLiveviewIsForLive
   alias LiveViewWorkshopWeb.TheSimplestLiveviewLive
   alias LiveViewWorkshopWeb.AboutHeexLive
+  alias LiveViewWorkshopWeb.LiveviewCallbacksLive
   alias LiveViewWorkshopWeb.Exercise1Live
   alias LiveViewWorkshopWeb.Exercise1PossibleSolutionLive
   alias LiveViewWorkshopWeb.Exercise2Live
@@ -21,6 +22,7 @@ defmodule LiveViewWorkshopWeb.Components.TopMenu do
     {WhatIsPhoenixLiveviewIsForLive, &Routes.what_is_phoenix_liveview_is_for_path/2},
     {TheSimplestLiveviewLive, &Routes.the_simplest_liveview_path/2},
     {AboutHeexLive, &Routes.about_heex_path/2},
+    {LiveviewCallbacksLive, &Routes.liveview_callbacks_path/2},
     {Exercise1Live, &Routes.exercise1_path/2},
     {Exercise1PossibleSolutionLive, &Routes.exercise1_possible_solution_path/2},
     {Exercise2Live, &Routes.exercise2_path/2},
