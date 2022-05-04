@@ -32,6 +32,7 @@ defmodule LiveViewWorkshopWeb.Router do
     live "/exercise_3", Exercise3Live, :index
     live "/exercise_3_possible_solution", Exercise3PossibleSolutionLive, :index
     live "/the_deploy_problem", TheDeployProblemLive, :index
+    live "/plans_for_next", PlansForNextLive, :index
   end
 
   # Other scopes may use custom stacks.
