@@ -49,15 +49,9 @@ defmodule LiveViewWorkshopWeb.Exercise2PossibleSolutionLive do
     <h3><%= @path %></h3>
 
     <.tab_group active_tab={@active_tab}>
-      <:tab id="tab_1" label="Tab 1">
-        Content 1
-      </:tab>
-      <:tab id="tab_2" label="Tab 2">
-        Content 2
-      </:tab>
-      <:tab id="tab_3" label="Tab 3">
-        Content 3
-      </:tab>
+      <:tab id="tab_1" label="Tab 1">Content 1</:tab>
+      <:tab id="tab_2" label="Tab 2">Content 2</:tab>
+      <:tab id="tab_3" label="Tab 3">Content 3</:tab>
     </.tab_group>
     <.code type="elixir"><%= @code %></.code>
     """

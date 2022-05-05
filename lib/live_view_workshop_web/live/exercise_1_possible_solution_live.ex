@@ -33,15 +33,9 @@ defmodule LiveViewWorkshopWeb.Exercise1PossibleSolutionLive do
       </div>
 
       <div class="tab-contents">
-        <div class={classes([@active_tab == "tab_1" && "tab-active"])}>
-          Content 1
-        </div>
-        <div class={classes([@active_tab == "tab_2" && "tab-active"])}>
-          Content 2
-        </div>
-        <div class={classes([@active_tab == "tab_3" && "tab-active"])}>
-          Content 3
-        </div>
+        <div class={classes([@active_tab == "tab_1" && "tab-active"])}>Content 1</div>
+        <div class={classes([@active_tab == "tab_2" && "tab-active"])}>Content 2</div>
+        <div class={classes([@active_tab == "tab_3" && "tab-active"])}>Content 3</div>
       </div>
     </div>
     <.code type="elixir"><%= @code %></.code>

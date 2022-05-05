@@ -12,12 +12,12 @@ defmodule LiveViewWorkshopWeb.AboutHeexLive do
       <%= for language <- (assigns[:languages] || []) do %>
         <%= if language == "en" do %>
           <.greeting {@greeting_attrs}>
-            <:header primary hidden={false}>
+            <:header primary user={@name}>
               What's up!
             </:header>
           </.greeting>
         <% else %>
-          <Translator.greeting language={@language} />
+          <Translator.greeting language={language} />
         <% end %>
       <% end %>
     </div>

@@ -31,7 +31,7 @@ defmodule LiveViewWorkshopWeb.Exercise1Live do
           If you don't know where to start check the very first example
           <a href="https://hexdocs.pm/phoenix_live_view/bindings.html">
             in the Binding docs
-          </a>.
+          </a>
         </div>
         <div>There you go!</div>
         <div>Woohoo!</div>

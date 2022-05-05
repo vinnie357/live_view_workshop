@@ -14,6 +14,8 @@ defmodule LiveViewWorkshopWeb.Components.TopMenu do
   alias LiveViewWorkshopWeb.Exercise3Live
   alias LiveViewWorkshopWeb.Exercise3PossibleSolutionLive
   alias LiveViewWorkshopWeb.TheDeployProblemLive
+  alias LiveViewWorkshopWeb.Exercise4Live
+  alias LiveViewWorkshopWeb.Exercise4PossibleSolutionLive
   alias LiveViewWorkshopWeb.PlansForNextLive
 
   @slides [
@@ -31,6 +33,8 @@ defmodule LiveViewWorkshopWeb.Components.TopMenu do
     {Exercise3Live, &Routes.exercise3_path/2},
     {Exercise3PossibleSolutionLive, &Routes.exercise3_possible_solution_path/2},
     {TheDeployProblemLive, &Routes.the_deploy_problem_path/2},
+    {Exercise4Live, &Routes.exercise4_path/2},
+    {Exercise4PossibleSolutionLive, &Routes.exercise4_possible_solution_path/2},
     {PlansForNextLive, &Routes.plans_for_next_path/2}
   ]
 

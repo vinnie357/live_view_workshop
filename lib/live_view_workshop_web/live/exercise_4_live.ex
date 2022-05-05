@@ -1,4 +1,4 @@
-defmodule LiveViewWorkshopWeb.Components.TabGroupPossibleSolution3 do
+defmodule LiveViewWorkshopWeb.Components.TabGroup4 do
   use LiveViewWorkshopWeb, :live_component
 
   def tab_group(assigns) do
@@ -43,33 +43,39 @@ defmodule LiveViewWorkshopWeb.Components.TabGroupPossibleSolution3 do
   defp classes(list), do: list |> Enum.filter(& &1) |> Enum.join(" ")
 end
 
-defmodule LiveViewWorkshopWeb.Exercise3PossibleSolutionLive do
+defmodule LiveViewWorkshopWeb.Exercise4Live do
   use LiveViewWorkshopWeb, :live_view
-  import LiveViewWorkshopWeb.Components.TabGroupPossibleSolution3
+  import LiveViewWorkshopWeb.Components.TabGroup4
 
   @path __ENV__.file |> String.replace_prefix(File.cwd!(), "") |> String.trim("/")
-  @code File.read!(__ENV__.file)
 
   @impl Phoenix.LiveView
   def mount(_params, _session, socket) do
     socket
     |> assign(:path, @path)
-    |> assign(:code, @code)
     |> ok()
   end
 
   @impl Phoenix.LiveView
   def render(assigns) do
     ~H"""
-    <h1>Exercise 3: Possible Solution</h1>
+    <h1>Exercise 4: Use router params to define active tab</h1>
     <h3><%= @path %></h3>
 
     <.tab_group>
-      <:tab id="tab_1" label="Tab 1">Content 1</:tab>
-      <:tab id="tab_2" label="Tab 2">Content 2</:tab>
-      <:tab id="tab_3" label="Tab 3">Content 3</:tab>
+      <:tab id="tab_1" label="Tab 1">
+        Let's check the docs for
+        <a href="https://hexdocs.pm/phoenix_live_view/live-navigation.html#handle_params-3">
+          handle_params/3
+        </a>
+      </:tab>
+      <:tab id="tab_2" label="Tab 2">
+        There you go!
+      </:tab>
+      <:tab id="tab_3" label="Tab 3">
+        Woohoo!
+      </:tab>
     </.tab_group>
-    <.code type="elixir"><%= @code %></.code>
     """
   end
 end
