@@ -1,5 +1,5 @@
 #!make
-.PHONY: help console setup server test
+.PHONY: help console setup server test server-prod
 
 help:
 	@grep ": \#" ${MAKEFILE_LIST} | column -t -s ':' | sort
@@ -13,8 +13,15 @@ setup: ## Setup the App.
 	mix format
 
 server: ## Start the App server.
-	mix format
 	PORT=4000 mix phx.server
+
+server-prod: ## Start the App server in prod env.
+server-prod: MIX_ENV=prod
+server-prod: PORT=4000
+server-prod: SECRET_KEY_BASE=foobar
+server-prod:
+	mix phx.digest
+	mix phx.server
 
 test: ## Runs the test suite.
 	mix format

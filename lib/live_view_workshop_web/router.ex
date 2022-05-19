@@ -35,6 +35,8 @@ defmodule LiveViewWorkshopWeb.Router do
     live "/exercise_4", Exercise4Live, :index
     live "/exercise_4_possible_solution", Exercise4PossibleSolutionLive, :index
     live "/exercise_4_possible_solution/:tab", Exercise4PossibleSolutionLive, :index
+    live "/exercise_5", Exercise5Live, :index
+    live "/exercise_5_possible_solution", Exercise5PossibleSolutionLive, :index
     live "/plans_for_next", PlansForNextLive, :index
   end
 
