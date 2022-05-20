@@ -1,22 +1,12 @@
 defmodule LiveViewWorkshopWeb.Components.TabGroup4 do
-  use LiveViewWorkshopWeb, :live_component
+  use LiveViewWorkshopWeb, :component
 
   def tab_group(assigns) do
-    ~H"""
-    <.live_component id="tab" module={__MODULE__} {assigns} />
-    """
-  end
-
-  @impl Phoenix.LiveComponent
-  def render(assigns) do
-    [%{id: first_tab_id} | _] = assigns.tab
-    assigns = Map.put_new(assigns, :active_tab, first_tab_id)
-
     ~H"""
     <div class="tab-group">
       <div class="tab-labels">
         <%= for tab <- @tab do %>
-          <a href="#" class={classes([@active_tab == tab.id && "tab-active"])} phx-click="select_tab" phx-value-tab={tab.id} phx-target={@myself}>
+          <a href="#" class={classes([@active_tab == tab.id && "tab-active"])} phx-click="select_tab" phx-value-tab={tab.id}>
             <%= tab.label %>
           </a>
         <% end %>
@@ -33,13 +23,6 @@ defmodule LiveViewWorkshopWeb.Components.TabGroup4 do
     """
   end
 
-  @impl Phoenix.LiveComponent
-  def handle_event("select_tab", %{"tab" => tab}, socket) do
-    socket
-    |> assign(:active_tab, tab)
-    |> noreply()
-  end
-
   defp classes(list), do: list |> Enum.filter(& &1) |> Enum.join(" ")
 end
 
@@ -52,6 +35,7 @@ defmodule LiveViewWorkshopWeb.Exercise4Live do
   @impl Phoenix.LiveView
   def mount(_params, _session, socket) do
     socket
+    |> assign(:active_tab, "tab_1")
     |> assign(:path, @path)
     |> ok()
   end
@@ -62,7 +46,7 @@ defmodule LiveViewWorkshopWeb.Exercise4Live do
     <h1>Exercise 4: Use router params to define active tab</h1>
     <h3><%= @path %></h3>
 
-    <.tab_group>
+    <.tab_group active_tab={@active_tab}>
       <:tab id="tab_1" label="Tab 1">
         Let's check the docs for
         <a href="https://hexdocs.pm/phoenix_live_view/live-navigation.html#handle_params-3">
@@ -77,5 +61,12 @@ defmodule LiveViewWorkshopWeb.Exercise4Live do
       </:tab>
     </.tab_group>
     """
+  end
+
+  @impl Phoenix.LiveView
+  def handle_event("select_tab", %{"tab" => tab}, socket) do
+    socket
+    |> assign(:active_tab, tab)
+    |> noreply()
   end
 end
