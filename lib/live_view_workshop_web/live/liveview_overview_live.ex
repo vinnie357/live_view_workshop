@@ -9,6 +9,7 @@ defmodule LiveViewWorkshopWeb.LiveviewOverviewLive do
     <h3>Elixir/Phoenix library created to provide a rich and real-time experience with server-rendered HTML</h3>
 
     <ul>
+      <li>HTTP Controller && WebSocket</li>
       <li>user keeps a live conn trough websocket (GenServer)</li>
       <li>GenServer holds the user state</li>
       <li>GenServer renders the HTML</li>

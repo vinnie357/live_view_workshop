@@ -1,4 +1,4 @@
-defmodule LiveViewWorkshopWeb.Exercise1PossibleSolutionLive do
+defmodule LiveViewWorkshopWeb.Exercise1PossibleSolutionSmallerLive do
   use LiveViewWorkshopWeb, :live_view
 
   @path __ENV__.file |> String.replace_prefix(File.cwd!(), "") |> String.trim("/")
@@ -16,7 +16,7 @@ defmodule LiveViewWorkshopWeb.Exercise1PossibleSolutionLive do
   @impl Phoenix.LiveView
   def render(assigns) do
     ~H"""
-    <h1>Exercise 1: Possible Solution</h1>
+    <h1>Exercise 1: Possible Solution with Smaller Payload</h1>
     <h3><%= @path %></h3>
 
     <div class="tab-group">
@@ -33,15 +33,9 @@ defmodule LiveViewWorkshopWeb.Exercise1PossibleSolutionLive do
       </div>
 
       <div class="tab-contents">
-        <%= if @active_tab == "tab_1" do %>
-          <div class="tab-active">Content 1</div>
-        <% end %>
-        <%= if @active_tab == "tab_2" do %>
-          <div class="tab-active">Content 2</div>
-        <% end %>
-        <%= if @active_tab == "tab_3" do %>
-          <div class="tab-active">Content 3</div>
-        <% end %>
+        <div class={classes([@active_tab == "tab_1" && "tab-active"])}>Content 1</div>
+        <div class={classes([@active_tab == "tab_2" && "tab-active"])}>Content 2</div>
+        <div class={classes([@active_tab == "tab_3" && "tab-active"])}>Content 3</div>
       </div>
     </div>
     <.code type="elixir"><%= @code %></.code>

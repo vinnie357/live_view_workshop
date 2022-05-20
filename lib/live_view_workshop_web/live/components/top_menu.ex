@@ -9,6 +9,7 @@ defmodule LiveViewWorkshopWeb.Components.TopMenu do
   alias LiveViewWorkshopWeb.LiveviewCallbacksLive
   alias LiveViewWorkshopWeb.Exercise1Live
   alias LiveViewWorkshopWeb.Exercise1PossibleSolutionLive
+  alias LiveViewWorkshopWeb.Exercise1PossibleSolutionSmallerLive
   alias LiveViewWorkshopWeb.Exercise2Live
   alias LiveViewWorkshopWeb.Exercise2PossibleSolutionLive
   alias LiveViewWorkshopWeb.Exercise3Live
@@ -30,6 +31,7 @@ defmodule LiveViewWorkshopWeb.Components.TopMenu do
     {LiveviewCallbacksLive, &Routes.liveview_callbacks_path/2},
     {Exercise1Live, &Routes.exercise1_path/2},
     {Exercise1PossibleSolutionLive, &Routes.exercise1_possible_solution_path/2},
+    {Exercise1PossibleSolutionSmallerLive, &Routes.exercise1_possible_solution_smaller_path/2},
     {Exercise2Live, &Routes.exercise2_path/2},
     {Exercise2PossibleSolutionLive, &Routes.exercise2_possible_solution_path/2},
     {Exercise3Live, &Routes.exercise3_path/2},
